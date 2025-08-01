@@ -50,3 +50,8 @@ class Grid:
     def get_cell(self, row, column):
         if self.is_inside(row, column):
             return self.cells[row][column]
+
+    def clear(self):
+        for row in range(self.rows):
+            for column in range(self.columns):
+                self.remove_particle(row, column)

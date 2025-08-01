@@ -1,6 +1,5 @@
-import sys
-
 import pygame
+
 from simulation import Simulation
 
 pygame.init()
@@ -21,22 +20,7 @@ simulation = Simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 while True:
 
     # 1. Event Handling
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-
-    buttons = pygame.mouse.get_pressed()
-    if buttons[0]:
-        pos = pygame.mouse.get_pos()
-        row = pos[1] // CELL_SIZE
-        column = pos[0] // CELL_SIZE
-        simulation.add_particle(row, column)
-    elif buttons[2]:
-        pos = pygame.mouse.get_pos()
-        row = pos[1] // CELL_SIZE
-        column = pos[0] // CELL_SIZE
-        simulation.remove_particle(row, column)
+    simulation.handle_controls()
 
     # 2. Updating State
     simulation.update()
@@ -47,4 +31,3 @@ while True:
 
     pygame.display.flip()
     clock.tick(FPS)
-
