@@ -8,3 +8,6 @@ Tutorials from [Programming With Nick](https://www.youtube.com/@programmingwithn
     >finished
 - falling sand: [youtube](https://youtu.be/JKv6CwOiIlU?si=DctnsYqhYypzeuhe)
     >WIP
+
+## Installation requirements
+Use ```pip install -r requirements.txt``` to install the required packages.
